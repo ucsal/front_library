@@ -16,12 +16,17 @@ import AddressForm from './Address';
 import PaymentForm from './PaymentForm';
 import Review from './Review';
 
+import ImageList from '@mui/material/ImageList';
+import ImageListItem from '@mui/material/ImageListItem';
+
+import logo from '../../../assets/storage.png'
+
 function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary" align="center">
       {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
+      <Link color="inherit" href="">
+        Geoup Stock
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -70,15 +75,25 @@ export default function Checkout() {
         }}
       >
         <Toolbar>
-          <Typography variant="h6" color="inherit" noWrap>
-            Company name
+          <ImageList sx={{ width: 32, height: 32 }} cols={1} rowHeight={0}>
+            <ImageListItem key={"item.img"}>
+              <img
+                src={logo}
+                srcSet={logo}
+                alt={"https://source.unsplash.com/random"}
+                loading="lazy"
+              />
+            </ImageListItem>
+          </ImageList>
+          <Typography variant="h6" color="inherit" noWrap sx={{ m: 2 }}>
+             Group Stock
           </Typography>
         </Toolbar>
       </AppBar>
       <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
         <Paper variant="outlined" sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}>
           <Typography component="h1" variant="h4" align="center">
-            Checkout
+            Cadastrar Usuário
           </Typography>
           <Stepper activeStep={activeStep} sx={{ pt: 3, pb: 5 }}>
             {steps.map((label) => (

@@ -12,13 +12,17 @@ import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import ImageList from '@mui/material/ImageList';
+import ImageListItem from '@mui/material/ImageListItem';
+
+import logo from '../../assets/storage.png'
 
 function Copyright(props: any) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
+      <Link color="inherit" href="https://ucsal.br/institucional/">
+        Group Stock
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -66,11 +70,21 @@ export default function Login() {
               alignItems: 'center',
             }}
           >
+            <ImageList sx={{ width: 80, height: 80 }} cols={1} rowHeight={0}>
+                  <ImageListItem key={"item.img"}>
+                    <img
+                      src={logo}
+                      srcSet={logo}
+                      alt={"https://source.unsplash.com/random"}
+                      loading="lazy"
+                    />
+                  </ImageListItem>
+              </ImageList>
             <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
               <LockOutlinedIcon />
             </Avatar>
             <Typography component="h1" variant="h5">
-              Sign in
+              Entrar
             </Typography>
             <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
               <TextField
@@ -78,7 +92,7 @@ export default function Login() {
                 required
                 fullWidth
                 id="email"
-                label="Email Address"
+                label="Digite o seu Email"
                 name="email"
                 autoComplete="email"
                 autoFocus
@@ -88,14 +102,14 @@ export default function Login() {
                 required
                 fullWidth
                 name="password"
-                label="Password"
+                label="Digite a sua senha"
                 type="password"
                 id="password"
                 autoComplete="current-password"
               />
               <FormControlLabel
                 control={<Checkbox value="remember" color="primary" />}
-                label="Remember me"
+                label="Lembrar de mim"
               />
               <Button
                 type="submit"
@@ -103,17 +117,17 @@ export default function Login() {
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
               >
-                Sign In
+                Entrar
               </Button>
               <Grid container>
                 <Grid item xs>
                   <Link href="#" variant="body2">
-                    Forgot password?
+                    Esqueceu a senha
                   </Link>
                 </Grid>
                 <Grid item>
                   <Link href="#" variant="body2">
-                    {"Don't have an account? Sign Up"}
+                    {"Não tem conta ?. Fale com um ADM"}
                   </Link>
                 </Grid>
               </Grid>
